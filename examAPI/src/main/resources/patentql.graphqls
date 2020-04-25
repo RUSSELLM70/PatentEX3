@@ -1,0 +1,25 @@
+type Patent {
+	id: String!,
+	guid: String!,
+	spice_name: String!,
+	discovered_name: String!,
+	entry_date: String!,
+	microorganism: String!
+}
+
+
+type Query {
+	Patents: [Patent]
+	Patent(id: String): Patent
+	Patent(guid: String):Patent
+	
+}
+
+type Mutation {
+	createPatent(spice_name: String, discovered_name: String, micro: String): Patent
+	updatePatent(id:String, spice_name: String, discovered_name: String, micro: String): Patent
+	delete(id: String): Patent
+	getPatentById(id: String): Patent
+	getPatentByGUID(guid:String):Patent
+}
+
